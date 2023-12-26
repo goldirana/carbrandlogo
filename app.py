@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Jun 11 22:34:20 2020
-
-@author: Krish Naik
-"""
 
 from __future__ import division, print_function
 # coding=utf-8
@@ -45,9 +40,6 @@ def model_predict(img_path, model):
     x=x/255
     x = np.expand_dims(x, axis=0)
    
-
-   
-
     preds = model.predict(x)
     preds=np.argmax(preds, axis=1)
     if preds==0:
@@ -87,4 +79,4 @@ def upload():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port = 5003)
